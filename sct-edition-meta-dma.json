@@ -1,0 +1,35 @@
+{"edition":{
+    "name":"international",
+    "dependencies":[],
+    "refsetTypes":[
+        {"name":"simple","columns":[
+            {"name":"referencedComponentId","type":"componentId","mutable":"no"}]
+        },
+        {"name":"annotation","columns":[
+            {"name":"referencedComponentId","type":"componentId","mutable":"no"},
+            {"name":"annotation","type":"string","mutable":"yes"}]
+        },
+        {"name":"association","columns":[
+            {"name":"referencedComponentId","type":"componentId","mutable":"no"},
+            {"name":"targetComponentId","type":"componentId","mutable":"yes"}]
+        },
+        {"name":"attributeValue","columns":[
+            {"name":"referencedComponentId","type":"componentId","mutable":"no"},
+            {"name":"valueId","type":"conceptId","mutable":"no"}]
+        },
+        {"name":"language","columns":[
+            {"name":"referencedComponentId","type":"descriptionId","mutable":"no","unique":"yes"},
+            {"name":"acceptabilityId","type":"conceptId","mutable":"no","constraint":"<900000000000446008 |Description type (core metadata concept)|"}]
+        },
+        {"name":"orderedComponent","columns":[
+            {"name":"referencedComponentId","type":"componentId","mutable":"no"},
+            {"name":"order","type":"integer","mutable":"yes"}]
+        },
+        {"name":"orderedAssociation","columns":[
+            {"name":"referencedComponentId","type":"componentId","mutable":"no"},
+            {"name":"targetComponentId","type":"conceptId","mutable":"no"},
+            {"name":"order","type":"integer","mutable":"yes"}]
+        }
+        ]
+}
+}
