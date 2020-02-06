@@ -2,34 +2,242 @@
     "name":"international",
     "dependencies":[],
     "refsetTypes":[
-        {"name":"simple","columns":[
-            {"name":"referencedComponentId","type":"componentId","mutable":"no"}]
-        },
-        {"name":"annotation","columns":[
-            {"name":"referencedComponentId","type":"componentId","mutable":"no"},
-            {"name":"annotation","type":"string","mutable":"yes"}]
-        },
-        {"name":"association","columns":[
-            {"name":"referencedComponentId","type":"componentId","mutable":"no"},
-            {"name":"targetComponentId","type":"componentId","mutable":"yes"}]
-        },
-        {"name":"attributeValue","columns":[
-            {"name":"referencedComponentId","type":"componentId","mutable":"no"},
-            {"name":"valueId","type":"conceptId","mutable":"no"}]
-        },
-        {"name":"language","columns":[
-            {"name":"referencedComponentId","type":"descriptionId","mutable":"no","unique":"yes"},
-            {"name":"acceptabilityId","type":"conceptId","mutable":"no","constraint":"<900000000000446008 |Description type (core metadata concept)|"}]
-        },
-        {"name":"orderedComponent","columns":[
-            {"name":"referencedComponentId","type":"componentId","mutable":"no"},
-            {"name":"order","type":"integer","mutable":"yes"}]
-        },
-        {"name":"orderedAssociation","columns":[
-            {"name":"referencedComponentId","type":"componentId","mutable":"no"},
-            {"name":"targetComponentId","type":"conceptId","mutable":"no"},
-            {"name":"order","type":"integer","mutable":"yes"}]
-        }
-        ]
-}
-}
+        
+        {"id":"446609009","name":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"any","mutable":"no"}]},
+
+        {"id":"447250001","name":"complex map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"},
+            {"name": "mapGroup","type": "integer"},
+            {"name": "mapPriority","type": "integer"},
+            {"name": "mapRule","type": "string"},
+            {"name": "mapAdvice","type": "string"},
+            {"name": "mapTarget","type": "string","datasize": 200},
+            {"name": "correlationId","type": "sctid","component":"concept", "constraint":""},
+            {"name": "mapCategoryId","type": "sctid","component":"concept", "constraint":""}]},         
+        {"id":"447258008","name":"ordered","deprecated":"yes","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"any","mutable":"no"},
+            {"name":"order","type":"integer","mutable":"yes"},
+            {"name":"linkedToId","type":"sctid","component":"any","mutable":"yes","unique":"no"}
+            ]},
+        {"id":"609331003","name":"extended map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"},
+            {"name": "mapGroup","type": "integer"},
+            {"name": "mapPriority","type": "integer"},
+            {"name": "mapRule","type": "string"},
+            {"name": "mapAdvice","type": "string"},
+            {"name": "mapTarget","type": "string",
+            "datasize": 200
+            },
+            {"name": "correlationId","type": "sctid","component":"concept", "constraint":""}]},
+        {"id":"705109006","name":"code to expression","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"705111002","name":"map correlation and origin","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"723589008","name":"mrcm domain","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"723592007","name":"mrcm attribute range","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"723604009","name":"mrcm attribute domain","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"733618005","name":"ordered association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"any","mutable":"no"}]},
+        {"id":"733619002","name":"ordered component","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"any","mutable":"no"}]},
+        {"id":"762676003","name":"owl expression","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"any","mutable":"no"}]},
+        {"id":"900000000000480006","name":"attribute value","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"any","mutable":"no"}]},
+        {"id":"900000000000496009","name":"simple map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"900000000000506000","name":"language","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"900000000000512005","name":"query specification","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"900000000000516008","name":"annotation","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"any","mutable":"no"}]},
+        {"id":"900000000000521006","name":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"any","mutable":"no"}]}
+        ]},
+    "refsets":[
+        {"id":"446608001","name":"icd-o map","type":"simple map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"447562003","name":"icd-10 map","type":"extended map","columns":[
+             {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"},
+            {"name": "mapGroup","type": "integer"},
+            {"name": "mapPriority","type": "integer"},
+            {"name": "mapRule","type": "string"},
+            {"name": "mapAdvice","type": "string"},
+            {"name": "mapTarget","type": "string","datasize": 200},
+            {"name": "correlationId","type": "sctid","component":"concept", "constraint":""},
+            {"name": "mapCategoryId","type": "sctid","component":"concept", "constraint":""}]},
+        {"id":"447563008","name":"icd-9-cm equivalence map","type":"complex map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"447565001","name":"virtual therapeutic moiety","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"447566000","name":"virtual medicinal product","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"447567009","name":"duplicate terms","type":"ordered","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"447568004","name":"ctv3 navigation hierarchy","type":"ordered","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"447569007","name":"icd-9-cm reimbursement map","type":"complex map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"447570008","name":"snomed ct top level navigation hierarchy","type":"ordered","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"448879004","name":"spanish language","type":"language","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"450970008","name":"general practice / family practice","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450971007","name":"gp/fp reason for encounter","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450973005","name":"gp/fp health issue","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450974004","name":"symptoms and signs for gp/fp reason for encounter","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450976002","name":"disorders and diseases for gp/fp reason for encounter","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450977006","name":"results for gp/fp reason for encounter","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450978001","name":"family history for gp/fp reason for encounter","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450980007","name":"allergies for gp/fp reason for encounter","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450981006","name":"adverse drug reactions for gp/fp reason for encounter","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450982004","name":"processes and procedures for gp/fp reason for encounter","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450983009","name":"social history for gp/fp reason for encounter","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450984003","name":"symptoms and signs for gp/fp health issue","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450985002","name":"disorders and diseases for gp/fp health issue","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450986001","name":"results for gp/fp health issue","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450988000","name":"family history for gp/fp health issue","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450989008","name":"allergies for gp/fp health issue","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450990004","name":"adverse drug reactions for gp/fp health issue","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450991000","name":"processes and procedures for gp/fp health issue","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"compconceptIdonentId","mutable":"no"}]},
+        {"id":"450992007","name":"social history for gp/fp health issue","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450993002","name":"international classification of primary care, second edition complex map","type":"complex map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"450994008","name":"icpc-2 map category","type":"attribute value","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"467614008","name":"gmdn simple map","type":"simple map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"608771002","name":"gmdn language","type":"language","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"703870008","name":"laterality indicator","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"705110001","name":"loinc term to expression","type":"code to expression","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"705112009","name":"loinc part map","type":"map correlation and origin","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"711112009","name":"icnp diagnoses simple map","type":"simple map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"712505008","name":"icnp interventions simple map","type":"simple map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"721143001","name":"dentistry","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"721144007","name":"general dentistry diagnostic","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"721145008","name":"odontogram","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"722128001","name":"chinese [international organization for standardization 639-1 code zh] language","type":"language","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"722129009","name":"japanese [international organization for standardization 639-1 code ja] language","type":"language","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"722130004","name":"german [international organization for standardization 639-1 code de] language","type":"language","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"722131000","name":"french [international organization for standardization 639-1 code fr] language","type":"language","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"723264001","name":"lateralizable body structure","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"723560006","name":"mrcm domain international","type":"mrcm domain","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"723561005","name":"mrcm attribute domain international","type":"mrcm attribute domain","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"723562003","name":"mrcm attribute range international","type":"mrcm attribute range","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"733073007","name":"owl axiom","type":"owl expression","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"733876003","name":"starter set","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"733900009","name":"ucum simple map","type":"simple map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"733989008","name":"nursing","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"733990004","name":"nursing activities","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"733991000","name":"nursing health issues","type":"simple","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"734138000","name":"anatomy structure and entire association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"734139008","name":"anatomy structure and part association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"741068007","name":"snomed ct to edqm simple map","type":"simple map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"762103008","name":"owl ontology","type":"owl expression","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"762959004","name":"edqm to snomed ct simple map","type":"simple map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"900000000000488004","name":"relationship refinability","type":"attribute value","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"900000000000489007","name":"concept inactivation indicator","type":"attribute value","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no","unique":"yes"},
+            {"name":"valueId","type":"sctid","component":"concept","mutable":"yes"}]},
+        {"id":"900000000000490003","name":"description inactivation indicator","type":"attribute value","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no","unique":"yes"},
+            {"name":"valueId","type":"sctid","component":"concept","mutable":"yes"},
+        {"id":"900000000000547002","name":"relationship inactivation indicator","type":"attribute value","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"relationship","mutable":"no","unique":"yes"},
+            {"name":"valueId","type":"sctid","component":"concept","mutable":"yes"}]},
+        {"id":"900000000000497000","name":"ctv3 simple map","type":"simple map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"900000000000498005","name":"snomed rt id simple map","type":"simple map","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"900000000000507009","name":"english","type":"language","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"900000000000508004","name":"gb english","type":"language","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"900000000000509007","name":"us english","type":"language","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"description","mutable":"no"}]},
+        {"id":"900000000000513000","name":"simple query specification","type":"query specification","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no"}]},
+        {"id":"900000000000517004","name":"associated image","type":"annotation","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"any","mutable":"no"}]},
+        {"id":"900000000000523009","name":"possibly equivalent to association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no","unique":"no"},
+            {"name":"targetComponentId","type":"sctid","component":"concept","unique":"no"}]},
+        {"id":"900000000000524003","name":"moved to association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no","unique":"yes"},
+            {"name":"targetComponentId","type":"sctid","component":"concept","unique":"no"}]},
+        {"id":"900000000000525002","name":"moved from association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no","unique":"yes"},
+            {"name":"targetComponentId","type":"sctid","component":"concept","unique":"no"}]},
+        {"id":"900000000000526001","name":"replaced by association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"any","mutable":"no","unique":"yes"},
+            {"name":"targetComponentId","type":"sctid","component":"concept","unique":"no"}]},
+        {"id":"900000000000527005","name":"same as association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no","unique":"yes"},
+            {"name":"targetComponentId","type":"sctid","component":"concept","unique":"no"}]},
+        {"id":"900000000000528000","name":"was a association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no","unique":"no"},
+            {"name":"targetComponentId","type":"sctid","component":"concept","unique":"no"}]},
+        {"id":"900000000000529008","name":"similar to association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no","unique":"no"},
+            {"name":"targetComponentId","type":"sctid","component":"concept","unique":"no"}]},
+        {"id":"900000000000530003","name":"alternative association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no","unique":"no"},
+            {"name":"targetComponentId","type":"sctid","component":"concept","unique":"no"}]},
+        {"id":"900000000000531004","name":"refers to concept association","type":"association","columns":[
+            {"name":"referencedComponentId","type":"sctid","component":"concept","mutable":"no","unique":"no"},
+            {"name":"targetComponentId","type":"sctid","component":"concept","unique":"no"}]}
+    ]}
+]}
